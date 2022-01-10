@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:plant_app/app/data/utils/constants.dart';
+import 'featuePlant.dart';
 
 import 'headerHome.dart';
 import 'titleWithMore.dart';
@@ -20,6 +20,7 @@ class Body extends StatelessWidget {
           TitleWithMore(title: "Recomended", press: () {}),
           RecomendedPlant(size: size),
           TitleWithMore(title: "Featured Plants", press: () {}),
+          FeaturePlant(size: size),
         ],
       ),
     );
