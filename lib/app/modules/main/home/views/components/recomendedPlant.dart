@@ -14,21 +14,21 @@ class RecomendedPlant extends StatelessWidget {
         children: [
           cardPlantRecomended(
             size: size,
-            image: "assets/images/image_1.png",
+            image: "assets/images/photo1.jpg",
             title: "Samantha",
             country: "Russia",
             price: 440,
           ),
           cardPlantRecomended(
             size: size,
-            image: "assets/images/image_2.png",
+            image: "assets/images/photo2.jpg",
             title: "Minerva",
             country: "Japan",
             price: 1300,
           ),
           cardPlantRecomended(
             size: size,
-            image: "assets/images/image_3.png",
+            image: "assets/images/photo3.jpg",
             title: "Kevin",
             country: "UA",
             price: 500,
@@ -64,7 +64,24 @@ class cardPlantRecomended extends StatelessWidget {
       width: size.width * 0.4,
       child: Column(
         children: [
-          Image.asset(image),
+          // Image.asset(image),
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: kDefaultPadding / 4),
+            height: size.height * 0.21,
+            decoration: BoxDecoration(
+                boxShadow: [
+                  BoxShadow(
+                    offset: Offset(5, 0),
+                    blurRadius: 10,
+                    color: kPrimaryColor.withOpacity(0.1),
+                  )
+                ],
+                image: DecorationImage(
+                    image: AssetImage(image), fit: BoxFit.cover),
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(10),
+                    topRight: Radius.circular(10))),
+          ),
           GestureDetector(
             onTap: () {
               var data = [

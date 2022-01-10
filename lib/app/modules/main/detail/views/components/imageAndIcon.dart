@@ -6,9 +6,11 @@ import 'package:plant_app/app/data/utils/constants.dart';
 import 'iconcard.dart';
 
 class ImageAndIcon extends StatelessWidget {
-  const ImageAndIcon({Key? key, required this.size}) : super(key: key);
+  const ImageAndIcon({Key? key, required this.size, required this.data})
+      : super(key: key);
 
   final Size size;
+  final data;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -57,8 +59,8 @@ class ImageAndIcon extends StatelessWidget {
                         color: kPrimaryColor.withOpacity(0.3)),
                   ],
                   image: DecorationImage(
-                      image: AssetImage("assets/images/img.png"),
-                      alignment: Alignment.centerLeft,
+                      image: AssetImage(data[0]["image"]),
+                      // alignment: Alignment.centerLeft,
                       fit: BoxFit.cover)),
             )
           ],

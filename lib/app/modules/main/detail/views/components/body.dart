@@ -15,7 +15,7 @@ class Body extends StatelessWidget {
       height: size.height,
       child: Column(
         children: [
-          ImageAndIcon(size: size),
+          ImageAndIcon(size: size, data: data),
           DetailOwnerProduct(data: data),
           Expanded(child: Container()),
           Row(

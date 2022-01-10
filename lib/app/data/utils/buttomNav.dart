@@ -19,7 +19,7 @@ class buttomNav extends StatelessWidget {
         BoxShadow(
             offset: Offset(0, -10),
             blurRadius: 35,
-            color: kPrimaryColor.withOpacity(0.35))
+            color: kPrimaryColor.withOpacity(0.1))
       ]),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
