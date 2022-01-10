@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:plant_app/app/data/utils/constants.dart';
+import 'package:plant_app/app/routes/app_pages.dart';
 
 class RecomendedPlant extends StatelessWidget {
   const RecomendedPlant({Key? key, required this.size}) : super(key: key);
@@ -16,7 +18,6 @@ class RecomendedPlant extends StatelessWidget {
             title: "Samantha",
             country: "Russia",
             price: 440,
-            press: () {},
           ),
           cardPlantRecomended(
             size: size,
@@ -24,7 +25,6 @@ class RecomendedPlant extends StatelessWidget {
             title: "Minerva",
             country: "Japan",
             price: 1300,
-            press: () {},
           ),
           cardPlantRecomended(
             size: size,
@@ -32,7 +32,6 @@ class RecomendedPlant extends StatelessWidget {
             title: "Kevin",
             country: "UA",
             price: 500,
-            press: () {},
           ),
         ],
       ),
@@ -48,13 +47,11 @@ class cardPlantRecomended extends StatelessWidget {
     required this.title,
     required this.country,
     required this.price,
-    required this.press,
   }) : super(key: key);
 
   final Size size;
   final String image, title, country;
   final int price;
-  final VoidCallback press;
 
   @override
   Widget build(BuildContext context) {
@@ -69,7 +66,17 @@ class cardPlantRecomended extends StatelessWidget {
         children: [
           Image.asset(image),
           GestureDetector(
-            onTap: press,
+            onTap: () {
+              var data = [
+                {
+                  "image": image,
+                  "title": title,
+                  "country": country,
+                  "price": price,
+                }
+              ];
+              Get.toNamed(Routes.DETAIL, arguments: data);
+            },
             child: Container(
               margin: EdgeInsets.symmetric(horizontal: kDefaultPadding / 4),
               padding: EdgeInsets.all(kDefaultPadding / 2),
